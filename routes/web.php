@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DiagnosaController;
 use App\Http\Controllers\GejalaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -22,5 +23,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('/gejala', GejalaController::class);
     Route::resource('/penyakit', PenyakitController::class);
     Route::resource('/rule', RuleController::class);
+    Route::resource('/diagnosa', DiagnosaController::class);
     Route::put('editProfile/{id}', [UserController::class, 'editProfile'])->name('editProfile');
 });

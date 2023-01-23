@@ -11,8 +11,8 @@
             <i class="fas fa-fw fa-home"></i>
             <span>Home</span></a>
     </li>
-    <li class="nav-item {{ set_active('gejala') }}">
-        <a class="nav-link" href="{{ route('gejala.index') }}">
+    <li class="nav-item {{ set_active('diagnosa') }}">
+        <a class="nav-link" href="{{ route('diagnosa.create') }}">
             <i class="fa fa-spinner" aria-hidden="true"></i>
             <span>Diagnosa</span></a>
     </li>
@@ -31,8 +31,8 @@
             <i class="fas fa-fw fa-list"></i>
             <span>Data Penyakit</span></a>
     </li>
-    <li class="nav-item {{ set_active('penyakit') }}">
-        <a class="nav-link" href="{{ route('home') }}">
+    <li class="nav-item {{ set_active('diagnosa') }}">
+        <a class="nav-link" href="{{ route('diagnosa.index') }}">
             <i class="fas fa-fw fa-book"></i>
             <span>Laporan</span></a>
     </li>

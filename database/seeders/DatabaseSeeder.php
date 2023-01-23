@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
             UserTableSeeder::class,
             PenyakitSeeder::class,
             GejalaSeeder::class,
+            RuleSeeder::class,
         ]);
     }
 }

@@ -57,6 +57,15 @@ Breadcrumbs::for('rule-edit', function (BreadcrumbTrail $trail, $penyakit) {
     // $trail->push($penyakit->kd_penyakit . ' - ' . $penyakit->penyakit, route('rule.edit', $penyakit));
 });
 // ============================================================================================================
+//diagnosa
+Breadcrumbs::for('diagnosa_index', function (BreadcrumbTrail $trail) {
+    $trail->push('Data diagnosa', route('diagnosa.index'));
+});
+//Rule > Tambah
+Breadcrumbs::for('diagnosa-tambah', function (BreadcrumbTrail $trail) {
+    $trail->parent('diagnosa_index');
+    $trail->push('Tambah diagnosa', route('diagnosa.create'));
+});
 
 // User
 Breadcrumbs::for('user', function (BreadcrumbTrail $trail) {

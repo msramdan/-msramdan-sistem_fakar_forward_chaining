@@ -1,46 +1,40 @@
 @extends('layouts.master')
-@section('title', 'Data rule')
+@section('title', 'Data diagnosa')
 @section('content')
     <div class="container-fluid">
-        {{ Breadcrumbs::render('rule_index') }}
+        {{ Breadcrumbs::render('diagnosa_index') }}
         <div class="row">
             <div class="col-md-12">
                 <div class="card shadow mb-4">
                     <div class="card-body">
-                        <a href="{{ route('rule.create') }}" class="btn btn-md btn-success mb-3">TAMBAH</a>
+                        <a href="{{ route('diagnosa.create') }}" class="btn btn-md btn-success mb-3">Export Ms Excel</a>
                         <div class="table-responsive">
                             <table id="dataTable" class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>User</th>
                                         <th>Penyakit</th>
-                                        <th>Gejala - Nilai</th>
+                                        <th>Gejala</th>
+                                        <th>Persentase</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($rule as $rule)
-                                        <tr>
+                                    @foreach ($diagnosa as $diagnosa)
+                                        {{-- <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $rule->penyakit }}</td>
-                                            @php
-                                                $gejala = DB::table('tb_rule')
-                                                    ->join('tb_gejala', 'tb_rule.gejala_id', '=', 'tb_gejala.id')
-                                                    ->select('tb_gejala.*', 'tb_rule.nilai')
-                                                    ->where('tb_rule.penyakit_id', $rule->penyakit_id)
-                                                    ->get();
-
-                                            @endphp
+                                            <td>{{ $diagnosa->kd_diagnosa }}</td>
+                                            <td>{{ $diagnosa->diagnosa }}</td>
+                                            <td>{{ $diagnosa->keterangan }}</td>
+                                            <td>{{ $diagnosa->solusi }}</td>
                                             <td>
-                                                @foreach ($gejala as $row)
-                                                    ({{ $row->kd_gejala }})
-                                                    {{ $row->gejala }} - <b>{{ $row->nilai }}</b>
-                                                    <br>
-                                                @endforeach
-                                            </td>
-                                            <td>
-                                                <form action="{{ route('rule.destroy', $rule->penyakit_id) }}"
-                                                    method="post" class="d-inline"
+                                                <a href="{{ route('diagnosa.edit', $diagnosa->id) }}"
+                                                    class="btn btn-primary btn-xs mb-1" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <form action="{{ route('diagnosa.destroy', $diagnosa->id) }}" method="post"
+                                                    class="d-inline"
                                                     onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                                                     @csrf
                                                     @method('delete')
@@ -49,7 +43,7 @@
                                                     </button>
                                                 </form>
                                             </td>
-                                        </tr>
+                                        </tr> --}}
                                     @endforeach
                                 </tbody>
                             </table>

@@ -7,37 +7,44 @@
             <div class="col-md-12">
                 <div class="card shadow mb-4">
                     <div class="card-body">
-                        <div class="form-group ">
-                            <a href="{{ route('rule.index') }}" class="btn btn-warning" style="float: right"><i
-                                    class="fa fa-arrow-left"></i> Back</a>
-                        </div>
-                        <div class="col-md-6">
-                            <form method="POST" action="{{ route('rule.store') }}">
-                                @csrf
-                                <div class="mb-3">
-                                    <label for="kd_rule">Kode rule</label>
-                                    <input class="form-control @error('kd_rule') is-invalid @enderror" id="kd_rule"
-                                        type="text" value="{{ $kodeBarang }}" placeholder="Kode rule" name="kd_rule"
-                                        autocomplete="off" readonly>
-                                    @error('kd_rule')
-                                        <span style="color: red;">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label for="rule">rule</label>
-                                    <input class="form-control @error('rule') is-invalid @enderror" id="rule"
-                                        type="rule" value="{{ old('rule') }}" placeholder="" name="rule"
-                                        autocomplete="off">
-                                    @error('rule')
-                                        <span style="color: red;">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
+                        <form action="{{ route('rule.store') }}" method="post">
+                            @csrf
+                            <table id="data-table-default" class="table  table-bordered table-hover table-td-valign-middle">
+                                <tbody>
+                                    <tr>
+                                        <td>Penyakit </td>
+                                        <td>
+                                            <select name="penyakit_id" id="penyakit_id" class="form-control" required="">
+                                                <option value="">-- Pilih --</option>
+                                                @foreach ($penyakit as $data)
+                                                    <option value="{{ $data->id }}">{{ $data->kd_penyakit }} -
+                                                        {{ $data->penyakit }}</option>
+                                                @endforeach
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table> <br>
+                            <div class="alert alert-primary" role="alert">
+                                <h5>Input Nilai Data Rule / Basis Kasus</h5>
+                            </div>
+                            <div class="form-row">
+
+                                @foreach ($gejala as $row)
+                                    <div class="form-group col-md-6">
+                                        <label for="">{{ $row->kd_gejala }} - {{ $row->gejala }}</label>
+                                        <input type="number" step=0.01 max="1" min="0.1" value=""
+                                            name="nilai[]" class="form-control">
+                                        <input type="hidden" readonly="" value="{{ $row->id }}" name="gejala_id[]"
+                                            class="form-control" id="" placeholder="">
+                                    </div>
+                                @endforeach
+                                <div class="form-group col-md-12">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"
                                             aria-hidden="true"></i> SIMPAN</button>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
