@@ -5,12 +5,8 @@
 <script src="{{ asset('temp/vendor/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('temp/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.6/highcharts.js" charset="utf-8"></script>
-
-{{-- @if (count($errors) > 0)
-<script type="text/javascript">
-    $( document ).ready(function() {
-         $('#edit-profile').modal('show');
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
     });
-</script> --}}
-{{-- @endif --}}
-
+</script>

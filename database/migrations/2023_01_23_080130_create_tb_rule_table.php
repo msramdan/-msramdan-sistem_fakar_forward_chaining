@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tb_gejala', function (Blueprint $table) {
+        Schema::create('tb_rule', function (Blueprint $table) {
             $table->id();
-            $table->text('kd_gejala');
-            $table->text('gejala');
+            $table->foreignId('penyakit_id')->constrained('tb_penyakit')->cascadeOnDelete();
+            $table->foreignId('gejala_id')->constrained('tb_gejala')->cascadeOnDelete();
+            $table->float('nilai', 8, 2);
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_gejala');
+        Schema::dropIfExists('tb_rule');
     }
 };

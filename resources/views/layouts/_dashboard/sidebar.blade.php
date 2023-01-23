@@ -12,12 +12,22 @@
             <span>Home</span></a>
     </li>
     <li class="nav-item {{ set_active('gejala') }}">
-        <a class="nav-link" href="{{ route('home') }}">
+        <a class="nav-link" href="{{ route('gejala.index') }}">
+            <i class="fa fa-spinner" aria-hidden="true"></i>
+            <span>Diagnosa</span></a>
+    </li>
+    <li class="nav-item {{ set_active('rule') }}">
+        <a class="nav-link" href="{{ route('rule.index') }}">
+            <i class="fa fa-database" aria-hidden="true"></i>
+            <span>Rule / Basis Kasus</span></a>
+    </li>
+    <li class="nav-item {{ set_active('gejala') }}">
+        <a class="nav-link" href="{{ route('gejala.index') }}">
             <i class="fas fa-fw fa-list"></i>
             <span>Data Gejala</span></a>
     </li>
     <li class="nav-item {{ set_active('penyakit') }}">
-        <a class="nav-link" href="{{ route('home') }}">
+        <a class="nav-link" href="{{ route('penyakit.index') }}">
             <i class="fas fa-fw fa-list"></i>
             <span>Data Penyakit</span></a>
     </li>

@@ -157,6 +157,7 @@ class UserController extends Controller
                 'name' => "required|string|max:50|unique:users,name, " . auth()->user()->id,
                 'email' => "required|email|unique:users,email," . auth()->user()->id,
                 'password' => "confirmed",
+                'no_hp' => "required",
             ],
         );
         if ($validator->fails()) {
@@ -170,12 +171,14 @@ class UserController extends Controller
                 $user->update([
                     'name'   => $request->name,
                     'email'   => $request->email,
+                    'no_hp'   => $request->no_hp,
                 ]);
             } else {
                 $user->update([
                     'name'   => $request->name,
                     'email'   => $request->email,
                     'password'   => Hash::make($request->password),
+                    'no_hp'   => $request->no_hp,
                 ]);
             }
             Alert::toast('Data berhasil diupdate', 'success');

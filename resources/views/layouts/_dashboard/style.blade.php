@@ -6,4 +6,3 @@
 <link href="{{ asset('temp/css/sb-admin-2.min.css') }}" rel="stylesheet">
 <link href="{{ asset('temp/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 <script src="{{ asset('temp/vendor/jquery/jquery.min.js') }}"></script>
-

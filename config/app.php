@@ -167,6 +167,7 @@ return [
         Darryldecode\Cart\CartServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
