@@ -16,10 +16,19 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'name' => 'Super Admin',
-                'email' => 'saepulramdan244@gmail.com',
+                'email' => 'admin@gmail.com',
                 'password' => Hash::make('admin'),
                 'no_hp' => '083874731480',
                 'level' => 'Admin',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'User Aplikasi',
+                'email' => 'user@gmail.com',
+                'password' => Hash::make('user'),
+                'no_hp' => '083874731480',
+                'level' => 'User',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

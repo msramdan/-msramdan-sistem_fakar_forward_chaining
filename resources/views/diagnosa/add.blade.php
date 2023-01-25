@@ -18,16 +18,22 @@
                         <div class="form-column col-lg-12 col-md-12 col-sm-12">
                             <form action="{{ route('diagnosa.store') }}" method="POST">
                                 @csrf
-                                <div class="form-group col-md-6  offset-md-3">
-                                    <div class=" form-group">
-                                        <select name="user_id" class="form-control" required="">
-                                            <option value=""> -- Pilih User -- </option>
-                                            @foreach ($user as $row)
-                                                <option value="{{ $row->id }}"> {{ $row->name }} </option>
-                                            @endforeach
-                                        </select>
+                                @if (Auth::user()->level == 'Admin')
+                                    <div class="form-group col-md-6  offset-md-3">
+                                        <div class=" form-group">
+                                            <select name="user_id" class="form-control" required="">
+                                                <option value=""> -- Pilih User -- </option>
+                                                @foreach ($user as $row)
+                                                    <option value="{{ $row->id }}"> {{ $row->name }} </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
+                                @else
+                                    <input type="hidden" readonly class="form-control" name="user_id"
+                                        value="<?= $this->fungsi->user_login()->user_id ?>">
+                                @endif
+
                                 <div class="row">
                                     @foreach ($gejala as $data)
                                         <div class="form-group col-md-6" style="margin-bottom: -10px">

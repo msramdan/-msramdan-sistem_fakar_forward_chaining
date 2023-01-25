@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('temp_persentase', function (Blueprint $table) {
             $table->id();
             $table->string('penyakit_id');
-            $table->string('persentase');
+            $table->float('persentase', 8, 2);
             $table->timestamps();
         });
     }

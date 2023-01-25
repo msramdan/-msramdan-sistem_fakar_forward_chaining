@@ -137,6 +137,7 @@ class DiagnosaController extends Controller
         $top = "SELECT * FROM temp_persentase join tb_penyakit on tb_penyakit.id =temp_persentase.penyakit_id order by persentase desc limit 1";
         $last = DB::select($top);
 
+
         // 12. update table diagnosa
         DB::table('tb_diagnosa')
             ->where('id', $insertedId)
