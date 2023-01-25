@@ -32,6 +32,15 @@ class UserTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'name' => 'User Aplikasi 2',
+                'email' => 'user2@gmail.com',
+                'password' => Hash::make('user2'),
+                'no_hp' => '083874731480',
+                'level' => 'User',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
 
         ]);
     }

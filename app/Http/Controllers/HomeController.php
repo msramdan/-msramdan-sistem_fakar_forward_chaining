@@ -23,6 +23,11 @@ class HomeController extends Controller
     {
 
 
-        return view('home.index');
+        return view('home.index', [
+            'user' => \DB::table('users')->count(),
+            'gejala' => \DB::table('tb_gejala')->count(),
+            'penyakit' => \DB::table('tb_penyakit')->count(),
+            'diagnosa' => \DB::table('tb_diagnosa')->count(),
+        ]);
     }
 }

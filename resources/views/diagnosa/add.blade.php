@@ -31,7 +31,7 @@
                                     </div>
                                 @else
                                     <input type="hidden" readonly class="form-control" name="user_id"
-                                        value="<?= $this->fungsi->user_login()->user_id ?>">
+                                        value="{{ Auth::user()->id }}">
                                 @endif
 
                                 <div class="row">

@@ -13,6 +13,8 @@ use App\Http\Controllers\UserController;
 // Route Back end
 Route::get('panel-login', [LoginController::class, 'showLoginForm'])->name('panel-login');
 Route::post('login', [LoginController::class, 'login']);
+Route::get('panel-register', [UserController::class, 'showRegisterForm'])->name('panel-register');
+Route::post('daftar-akun', [UserController::class, 'daftarAkun'])->name('daftar-akun');
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::get('/home', function () {

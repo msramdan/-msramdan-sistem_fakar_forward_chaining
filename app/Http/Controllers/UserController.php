@@ -29,6 +29,44 @@ class UserController extends Controller
         return view('user.index');
     }
 
+    public function showRegisterForm()
+    {
+        return view('auth.register');
+    }
+
+    public function daftarAkun(Request $request)
+    {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'name' => "required|string|max:50|unique:users,name",
+                'email' => "required|email|unique:users,email",
+                'password' => "required|min:6|confirmed",
+                'no_hp' => "required"
+            ],
+        );
+        if ($validator->fails()) {
+            return redirect()->back()->withInput($request->all())->withErrors($validator);
+        }
+
+        try {
+            User::create([
+                'name'   => $request->name,
+                'email'   => $request->email,
+                'password'   => Hash::make($request->password),
+                'level'   => 'User',
+                'no_hp'   => $request->no_hp,
+            ]);
+            Alert::toast('Registrasi Akun Berhasil, Silahkan Login', 'success');
+            return redirect()->route('panel-login');
+        } catch (\Throwable $th) {
+            Alert::toast('Registrasi Akun Gagal', 'error');
+            return redirect()->route('panel-register');
+        }
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *

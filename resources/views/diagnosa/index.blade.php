@@ -7,7 +7,11 @@
             <div class="col-md-12">
                 <div class="card shadow mb-4">
                     <div class="card-body">
-                        <a href="{{ route('diagnosa.create') }}" class="btn btn-md btn-success mb-3">Export Ms Excel</a>
+
+                        @if (Auth::user()->level == 'Admin')
+                            <a href="{{ route('diagnosa.create') }}" class="btn btn-md btn-success mb-3">Export Ms Excel</a>
+                        @endif
+
                         <div class="table-responsive">
                             <table id="dataTable" class="table table-bordered">
                                 <thead>
@@ -17,7 +21,11 @@
                                         <th>Penyakit</th>
                                         <th>Gejala</th>
                                         <th>Persentase</th>
-                                        <th>Action</th>
+                                        @if (Auth::user()->level == 'Admin')
+                                            <th>Action</th>
+                                        @endif
+
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -38,17 +46,21 @@
 
                                             </td>
                                             <td>{{ $diagnosa->persentase }} %</td>
-                                            <td>
-                                                <form action="{{ route('diagnosa.destroy', $diagnosa->id) }}" method="post"
-                                                    class="d-inline"
-                                                    onsubmit="return confirm('Yakin ingin menghapus data ini?')">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button class="btn btn-danger btn-xs mb-1" title="Hapus">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </button>
-                                                </form>
-                                            </td>
+                                            @if (Auth::user()->level == 'Admin')
+                                                <td>
+                                                    <form action="{{ route('diagnosa.destroy', $diagnosa->id) }}"
+                                                        method="post" class="d-inline"
+                                                        onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button class="btn btn-danger btn-xs mb-1" title="Hapus">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            @endif
+
+
                                         </tr>
                                     @endforeach
                                 </tbody>

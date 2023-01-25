@@ -7,7 +7,11 @@
             <div class="col-md-12">
                 <div class="card shadow mb-4">
                     <div class="card-body">
-                        <a href="{{ route('penyakit.create') }}" class="btn btn-md btn-success mb-3">TAMBAH</a>
+                        @if (Auth::user()->level == 'Admin')
+                            <a href="{{ route('penyakit.create') }}" class="btn btn-md btn-success mb-3">TAMBAH</a>
+                        @endif
+
+
                         <div class="table-responsive">
                             <table id="dataTable" class="table table-bordered">
                                 <thead>
@@ -17,7 +21,10 @@
                                         <th>Penyakit</th>
                                         <th>Keterangan</th>
                                         <th>Solusi</th>
-                                        <th>Action</th>
+                                        @if (Auth::user()->level == 'Admin')
+                                            <th>Action</th>
+                                        @endif
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -28,21 +35,23 @@
                                             <td>{{ $penyakit->penyakit }}</td>
                                             <td>{{ $penyakit->keterangan }}</td>
                                             <td>{{ $penyakit->solusi }}</td>
-                                            <td>
-                                                <a href="{{ route('penyakit.edit', $penyakit->id) }}"
-                                                    class="btn btn-primary btn-xs mb-1" title="Edit">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                <form action="{{ route('penyakit.destroy', $penyakit->id) }}" method="post"
-                                                    class="d-inline"
-                                                    onsubmit="return confirm('Yakin ingin menghapus data ini?')">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button class="btn btn-danger btn-xs mb-1" title="Hapus">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </button>
-                                                </form>
-                                            </td>
+                                            @if (Auth::user()->level == 'Admin')
+                                                <td>
+                                                    <a href="{{ route('penyakit.edit', $penyakit->id) }}"
+                                                        class="btn btn-primary btn-xs mb-1" title="Edit">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <form action="{{ route('penyakit.destroy', $penyakit->id) }}"
+                                                        method="post" class="d-inline"
+                                                        onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button class="btn btn-danger btn-xs mb-1" title="Hapus">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            @endif
                                         </tr>
                                     @endforeach
                                 </tbody>
