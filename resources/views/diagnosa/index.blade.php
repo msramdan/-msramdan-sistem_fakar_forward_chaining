@@ -22,17 +22,23 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($diagnosa as $diagnosa)
-                                        {{-- <tr>
+                                        <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $diagnosa->kd_diagnosa }}</td>
-                                            <td>{{ $diagnosa->diagnosa }}</td>
-                                            <td>{{ $diagnosa->keterangan }}</td>
-                                            <td>{{ $diagnosa->solusi }}</td>
+                                            <td>{{ $diagnosa->name }}</td>
+                                            <td>{{ $diagnosa->penyakit }}</td>
                                             <td>
-                                                <a href="{{ route('diagnosa.edit', $diagnosa->id) }}"
-                                                    class="btn btn-primary btn-xs mb-1" title="Edit">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
+                                                @php
+                                                    $gejala = json_decode($diagnosa->gejala_id);
+                                                @endphp
+                                                <ul>
+                                                    @foreach ($gejala as $row)
+                                                        <li>{{ namaGejala($row) }} </li>
+                                                    @endforeach
+                                                </ul>
+
+                                            </td>
+                                            <td>{{ $diagnosa->persentase }} %</td>
+                                            <td>
                                                 <form action="{{ route('diagnosa.destroy', $diagnosa->id) }}" method="post"
                                                     class="d-inline"
                                                     onsubmit="return confirm('Yakin ingin menghapus data ini?')">
@@ -43,7 +49,7 @@
                                                     </button>
                                                 </form>
                                             </td>
-                                        </tr> --}}
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>

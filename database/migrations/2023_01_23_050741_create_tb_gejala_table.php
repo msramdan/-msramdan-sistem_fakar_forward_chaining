@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('tb_gejala', function (Blueprint $table) {
             $table->id();
-            $table->text('kd_gejala');
-            $table->text('gejala');
+            $table->string('kd_gejala');
+            $table->string('gejala');
             $table->timestamps();
         });
     }

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
+
 if (!function_exists('set_active')) {
     function set_active($uri)
     {
@@ -16,4 +18,12 @@ if (!function_exists('set_active')) {
         }
         // return request()->routeIs($uri) ? 'active' : '';
     }
+}
+
+
+
+function namaGejala($gejala_id)
+{
+    $gejala = DB::table('tb_gejala')->where('id', $gejala_id)->first();
+    return $gejala->gejala;
 }

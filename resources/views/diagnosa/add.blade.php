@@ -23,7 +23,7 @@
                                         <select name="user_id" class="form-control" required="">
                                             <option value=""> -- Pilih User -- </option>
                                             @foreach ($user as $row)
-                                                <option value="{{ $row->user_id }}"> {{ $row->name }} </option>
+                                                <option value="{{ $row->id }}"> {{ $row->name }} </option>
                                             @endforeach
                                         </select>
                                     </div>
