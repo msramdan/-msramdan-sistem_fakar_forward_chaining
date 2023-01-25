@@ -51,8 +51,8 @@
                                     @endforeach
                                 </div>
                                 <div class="form-group" style="margin-top: 5px;float:right">
-                                    <button type="submit" class="btn btn-danger"><i class="fa fa-refresh"
-                                            aria-hidden="true"></i> Proses</button>
+                                    <button disabled="disabled" id="submit" type="submit" class="btn btn-danger"><i
+                                            class="fa fa-refresh" aria-hidden="true"></i> Proses</button>
 
                                 </div>
                             </form>
@@ -63,3 +63,25 @@
         </div>
     </div>
 @endsection
+@push('js')
+    <script>
+        $(document).ready(function() {
+            var tmp = [];
+            $("input[type='checkbox']").change(function() {
+                var checked = $(this).val();
+                if ($(this).is(':checked')) {
+                    tmp.push(checked);
+                } else {
+                    tmp.splice($.inArray(checked, tmp), 1);
+                }
+                var res = tmp.length;
+                // console.log(res);
+                if (res > 0) {
+                    $('#submit').prop('disabled', false);
+                } else if (res == 0) {
+                    $('#submit').prop('disabled', true);
+                }
+            });
+        });
+    </script>
+@endpush
