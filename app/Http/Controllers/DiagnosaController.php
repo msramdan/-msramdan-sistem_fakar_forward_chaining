@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\DiagnosaExport;
 use App\Models\Diagnosa;
 use App\Models\Gejala;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DiagnosaController extends Controller
 {
@@ -36,6 +38,11 @@ class DiagnosaController extends Controller
         }
 
         return view('diagnosa.index', compact('diagnosa'));
+    }
+
+    public function export_excel()
+    {
+        return Excel::download(new DiagnosaExport, 'laporan_diagnosa.xlsx');
     }
 
     /**

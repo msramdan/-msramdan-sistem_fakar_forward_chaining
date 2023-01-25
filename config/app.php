@@ -166,6 +166,7 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         Darryldecode\Cart\CartServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
 
         /*
@@ -203,6 +204,7 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ])->toArray(),
 
 ];

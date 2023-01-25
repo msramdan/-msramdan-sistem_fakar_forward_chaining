@@ -27,3 +27,9 @@ function namaGejala($gejala_id)
     $gejala = DB::table('tb_gejala')->where('id', $gejala_id)->first();
     return $gejala->gejala;
 }
+
+function namaKdGejala($gejala_id)
+{
+    $gejala = DB::table('tb_gejala')->where('id', $gejala_id)->first();
+    return $gejala->kd_gejala;
+}

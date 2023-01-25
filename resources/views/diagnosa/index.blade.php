@@ -9,7 +9,7 @@
                     <div class="card-body">
 
                         @if (Auth::user()->level == 'Admin')
-                            <a href="{{ route('diagnosa.create') }}" class="btn btn-md btn-success mb-3">Export Ms Excel</a>
+                            <a href="{{ route('export_excel') }}" class="btn btn-md btn-success mb-3">Export Ms Excel</a>
                         @endif
 
                         <div class="table-responsive">

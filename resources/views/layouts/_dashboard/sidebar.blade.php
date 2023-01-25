@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-desktop"></i>
+        <div class="sidebar-brand-icon">
+            <i class="fa fa-hospital" aria-hidden="true"></i>
         </div>
         <div class="sidebar-brand-text mx-3">{{ config('app.name') }}</div>
     </a>

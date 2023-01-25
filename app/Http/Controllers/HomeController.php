@@ -28,6 +28,7 @@ class HomeController extends Controller
             'gejala' => \DB::table('tb_gejala')->count(),
             'penyakit' => \DB::table('tb_penyakit')->count(),
             'diagnosa' => \DB::table('tb_diagnosa')->count(),
+
         ]);
     }
 }

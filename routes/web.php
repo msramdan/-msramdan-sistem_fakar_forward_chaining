@@ -26,5 +26,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('/penyakit', PenyakitController::class);
     Route::resource('/rule', RuleController::class);
     Route::resource('/diagnosa', DiagnosaController::class);
+    Route::get('/export_excel', [DiagnosaController::class, 'export_excel'])->name('export_excel');
     Route::put('editProfile/{id}', [UserController::class, 'editProfile'])->name('editProfile');
 });
