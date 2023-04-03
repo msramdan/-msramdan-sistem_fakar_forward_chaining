@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01908c275f6ea0ed5feb2dd11aa5a214",
+    "content-hash": "69ca694d90a6ea0ce129df65387da2fc",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -995,6 +995,43 @@
                 }
             ],
             "time": "2023-01-14T14:17:03+00:00"
+        },
+        {
+            "name": "evdigi/generalhelper",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Evdigi-INA/general-helper-laravel.git",
+                "reference": "5eccd7981a111fe96f7a8ec50426044899558da9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Evdigi-INA/general-helper-laravel/zipball/5eccd7981a111fe96f7a8ec50426044899558da9",
+                "reference": "5eccd7981a111fe96f7a8ec50426044899558da9",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Evdigi\\Generalhelper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Evdigi"
+                }
+            ],
+            "description": "Kumpulan function general",
+            "support": {
+                "issues": "https://github.com/Evdigi-INA/general-helper-laravel/issues",
+                "source": "https://github.com/Evdigi-INA/general-helper-laravel/tree/main"
+            },
+            "time": "2023-02-03T01:03:38+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -9581,7 +9618,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "evdigi/generalhelper": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

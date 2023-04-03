@@ -1109,6 +1109,46 @@
             "install-path": "../egulias/email-validator"
         },
         {
+            "name": "evdigi/generalhelper",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Evdigi-INA/general-helper-laravel.git",
+                "reference": "5eccd7981a111fe96f7a8ec50426044899558da9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Evdigi-INA/general-helper-laravel/zipball/5eccd7981a111fe96f7a8ec50426044899558da9",
+                "reference": "5eccd7981a111fe96f7a8ec50426044899558da9",
+                "shasum": ""
+            },
+            "time": "2023-02-03T01:03:38+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Evdigi\\Generalhelper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Evdigi"
+                }
+            ],
+            "description": "Kumpulan function general",
+            "support": {
+                "issues": "https://github.com/Evdigi-INA/general-helper-laravel/issues",
+                "source": "https://github.com/Evdigi-INA/general-helper-laravel/tree/main"
+            },
+            "install-path": "../evdigi/generalhelper"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.16.0",
             "version_normalized": "4.16.0.0",

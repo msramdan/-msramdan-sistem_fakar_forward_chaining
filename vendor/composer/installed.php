@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '179b21b07740759a448da8e2dfb144d4effa27e5',
+        'reference' => 'e256277ab9d4dbd269e9d9303e3512457cd5592c',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -164,6 +164,17 @@
             'install_path' => __DIR__ . '/../egulias/email-validator',
             'aliases' => array(),
             'reference' => '3a85486b709bc384dae8eb78fb2eec649bdb64ff',
+            'dev_requirement' => false,
+        ),
+        'evdigi/generalhelper' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../evdigi/generalhelper',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'reference' => '5eccd7981a111fe96f7a8ec50426044899558da9',
             'dev_requirement' => false,
         ),
         'ezyang/htmlpurifier' => array(
@@ -487,7 +498,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '179b21b07740759a448da8e2dfb144d4effa27e5',
+            'reference' => 'e256277ab9d4dbd269e9d9303e3512457cd5592c',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

@@ -169,6 +169,7 @@ class ComposerStaticInit835fb16e2072a8b4660c7d6bf2010c5b
         ),
         'E' => 
         array (
+            'Evdigi\\Generalhelper\\' => 21,
             'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
@@ -547,6 +548,10 @@ class ComposerStaticInit835fb16e2072a8b4660c7d6bf2010c5b
         array (
             0 => __DIR__ . '/..' . '/facade/ignition-contracts/src',
         ),
+        'Evdigi\\Generalhelper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/evdigi/generalhelper/src',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
@@ -666,6 +671,7 @@ class ComposerStaticInit835fb16e2072a8b4660c7d6bf2010c5b
         'App\\Actions\\Fortify\\UpdateUserProfileInformation' => __DIR__ . '/../..' . '/app/Actions/Fortify/UpdateUserProfileInformation.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Exports\\DiagnosaExport' => __DIR__ . '/../..' . '/app/Exports/DiagnosaExport.php',
         'App\\Helpers\\ResponseFormatter' => __DIR__ . '/../..' . '/app/Helpers/ResponseFormatter.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -1248,6 +1254,7 @@ class ComposerStaticInit835fb16e2072a8b4660c7d6bf2010c5b
         'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/QuotedString.php',
         'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/TLD.php',
         'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/Warning.php',
+        'Evdigi\\Generalhelper\\GeneralHelper' => __DIR__ . '/..' . '/evdigi/generalhelper/src/GeneralHelper.php',
         'Facade\\IgnitionContracts\\BaseSolution' => __DIR__ . '/..' . '/facade/ignition-contracts/src/BaseSolution.php',
         'Facade\\IgnitionContracts\\HasSolutionsForThrowable' => __DIR__ . '/..' . '/facade/ignition-contracts/src/HasSolutionsForThrowable.php',
         'Facade\\IgnitionContracts\\ProvidesSolution' => __DIR__ . '/..' . '/facade/ignition-contracts/src/ProvidesSolution.php',
